@@ -8,7 +8,9 @@ import "./index.css";
 import App from "./App";
 import { store } from "./redux/store";
 
-axios.defaults.baseURL = "https://icube-backend.herokuapp.com";
+axios.defaults.baseURL = "http://localhost:3001";
+
+// "https://icube-backend.herokuapp.com"
 
 ReactDOM.render(
   <React.StrictMode>

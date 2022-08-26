@@ -7,18 +7,18 @@ const initialState = {
   user: {},
 };
 
-export const loginUser = createAsyncThunk(
-  "auth/loginUser",
+export const loginInvestor = createAsyncThunk(
+  "invauth/loginInvestor",
   async (userData) => {
-    const { data } = await axios.post("/auth/login", userData);
+    const { data } = await axios.post("/invauth/login", userData);
     return data;
   }
 );
 
-export const registerUser = createAsyncThunk(
-  "auth/registerUser",
+export const registerInvestor = createAsyncThunk(
+  "invauth/registerInvestor",
   async (userData) => {
-    const { data } = await axios.post("/auth/register", userData);
+    const { data } = await axios.post("/invauth/register", userData);
     return data;
   }
 );
@@ -37,49 +37,56 @@ export const authSlice = createSlice({
     },
   },
   extraReducers: {
-    [loginUser.pending]: (state, action) => {
+    [loginInvestor.pending]: (state, action) => {
       state.status = "loading";
     },
-    [loginUser.fulfilled]: (state, action) => {
-      const { token, name, email, startupName } = action.payload.response;
+    [loginInvestor.fulfilled]: (state, action) => {
+      const { token, name, email, organisation } = action.payload.response;
       localStorage.setItem(
         "login",
-        JSON.stringify({ token, email, name, startupName, isLoggedIn: true })
+        JSON.stringify({
+          token,
+          email,
+          name,
+          organisation,
+          isLoggedIn: true,
+          isInvestor: true,
+        })
       );
       state.user.name = name;
       state.user.email = email;
-      state.user.startupName = startupName;
+      state.user.organisation = organisation;
       state.status = "success";
       state.isLoggedIn = true;
     },
-    [loginUser.rejected]: (state, action) => {
+    [loginInvestor.rejected]: (state, action) => {
       state.status = "failed";
       state.isLoggedIn = false;
     },
 
-    [registerUser.pending]: (state, action) => {
+    [registerInvestor.pending]: (state, action) => {
       state.status = "loading";
     },
-    [registerUser.fulfilled]: (state, action) => {
+    [registerInvestor.fulfilled]: (state, action) => {
       state.status = "success";
-      const { token, name, email, startupName } = action.payload.response;
+      const { token, name, email, organisation } = action.payload.response;
       localStorage.setItem(
         "login",
         JSON.stringify({
           token,
           name,
           email,
-          startupName,
+          organisation,
           isLoggedIn: true,
-          isUser: true,
+          isInvestor: true,
         })
       );
       state.user.name = name;
       state.user.email = email;
-      state.user.startupName = startupName;
+      state.user.organisation = organisation;
       state.isLoggedIn = true;
     },
-    [registerUser.rejected]: (state, action) => {
+    [registerInvestor.rejected]: (state, action) => {
       state.status = "failed";
       state.isLoggedIn = false;
     },

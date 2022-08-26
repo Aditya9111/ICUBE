@@ -12,7 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { registerUser } from "../redux/authSlice";
+import { registerInvestor } from "../redux/invauthSlice";
 // Assets
 import signInImage from "../assets/img/signInImage.jpg";
 
@@ -23,7 +23,7 @@ function InvestorRegisterForm({ setRegistered }) {
 
   const [registerData, setRegisterData] = useState({
     name: "",
-    startupName: "",
+    organisation: "",
     email: "",
     password: "",
   });
@@ -37,7 +37,7 @@ function InvestorRegisterForm({ setRegistered }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(registerUser(registerData));
+    dispatch(registerInvestor(registerData));
   };
 
   useEffect(() => {
@@ -98,7 +98,7 @@ function InvestorRegisterForm({ setRegistered }) {
                   [e.target.name]: e.target.value,
                 }))
               }
-              name="startupName"
+              name="organisation"
               type="text"
               placeholder="Enter Startup name"
               bg="gray.50"

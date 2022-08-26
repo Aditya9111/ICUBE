@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Flex,
@@ -18,34 +18,26 @@ import {
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/authSlice";
 
-export default function Header() {
+export default function InvestorHeader() {
   const dispatch = useDispatch();
 
   const { email, name, startupName, organisation } = JSON.parse(
     localStorage.getItem("login")
   );
   const variant = useBreakpointValue({ base: "base", sm: "sm", md: "md" });
-  const [scroll, setScroll] = useState(false);
-
-  const changeScroll = () =>
-    document.body.scrollTop > 80 || document.documentElement.scrollTop > 80
-      ? setScroll(true)
-      : setScroll(false);
-
-  window.addEventListener("scroll", changeScroll);
 
   return (
     <>
       <Box
         flex="0 1 auto"
+        position="fixed"
+        zIndex="999"
+        width="100%"
+        height={"65px"}
         bg={"white"}
-        alignItems="center"
-        p="3"
-        boxShadow={scroll ? "base" : "none"}
-        position="sticky"
-        top="0"
-        zIndex="sticky"
-        w="full"
+        px="5"
+        pt="3"
+        boxShadow="base"
       >
         <Flex justify="space-between">
           <Flex alignItems="center" justify="flex-start">
@@ -64,33 +56,13 @@ export default function Header() {
                 Home
               </Button>
             </Link>
+
             <Link
               hidden={variant === "sm" || variant === "base"}
-              to="/addblogs"
+              to="/findStartup"
             >
               <Button mx="2" colorScheme="teal" variant="ghost">
-                Add blog
-              </Button>
-            </Link>
-            <Link hidden={variant === "sm" || variant === "base"} to="/addJobs">
-              <Button mx="2" colorScheme="teal" variant="ghost">
-                Add Job
-              </Button>
-            </Link>
-            <Link
-              hidden={variant === "sm" || variant === "base"}
-              to="/findMentor"
-            >
-              <Button mx="2" colorScheme="teal" variant="ghost">
-                Find Mentor
-              </Button>
-            </Link>
-            <Link
-              hidden={variant === "sm" || variant === "base"}
-              to="/addAuction"
-            >
-              <Button mx="2" colorScheme="teal" variant="ghost">
-                Funding Request
+                Find Startup
               </Button>
             </Link>
           </Flex>

@@ -19,10 +19,13 @@ import Article from "./pages/Article";
 import JobDetails from "./pages/JobDetail";
 import Home from "./components/Home";
 import InvestorLogin from "./pages/InvestorLogin";
+import InvestorRoute from "./components/InvestorRoute";
+import FindStartup from "./pages/FindStartup";
 
 function App() {
   const dispatch = useDispatch();
   const { isLoggedIn } = useSelector((state) => state.auth);
+  const { isInvestor } = useSelector((state) => state.invauth);
 
   useEffect(() => {
     if ("login" in localStorage) {
@@ -37,6 +40,13 @@ function App() {
       dispatch(setAuth({ isLoggedIn }));
     }
   }, [dispatch, isLoggedIn]);
+
+  useEffect(() => {
+    const { isInvestor } = JSON.parse(localStorage.getItem("login")) || {};
+    if (isInvestor) {
+      dispatch(setAuth({ isInvestor }));
+    }
+  }, [dispatch, isInvestor]);
 
   return (
     <>
@@ -71,6 +81,17 @@ function App() {
             <AuctionList />
           </Layout>
         </PrivateRoute>
+        <InvestorRoute exact path="/investorDash">
+          <Layout>
+            <Dash />
+          </Layout>
+        </InvestorRoute>
+
+        <InvestorRoute exact path="/findStartup">
+          <Layout>
+            <FindStartup />
+          </Layout>
+        </InvestorRoute>
 
         <Route exact path="/home">
           <Home />

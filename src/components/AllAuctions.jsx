@@ -23,7 +23,7 @@ const AuctionList = () => {
   console.log(data);
   return (
     <>
-      <Container maxW={"7xl"} p="12">
+      <Container maxW={"7xl"} p="5">
         <Heading as="h1" color={"teal"}>
           Auctions
         </Heading>

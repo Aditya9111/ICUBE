@@ -8,6 +8,7 @@ import {
   Text,
   Flex,
   useColorModeValue,
+  Select,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,14 +22,15 @@ function RegisterForm({ setRegistered }) {
   const textColor = useColorModeValue("gray.700", "white");
   const bgColor = useColorModeValue("white", "gray.700");
 
+  const [show, setShow] = React.useState(false);
   const [registerData, setRegisterData] = useState({
     name: "",
     startupName: "",
     email: "",
     password: "",
+    domain: "",
   });
 
-  const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
 
   const dispatch = useDispatch();
@@ -104,6 +106,23 @@ function RegisterForm({ setRegistered }) {
               bg="gray.50"
               my="3"
             />
+            <Select
+              my="3"
+              bg="gray.50"
+              onChange={(e) =>
+                setRegisterData((prev) => ({
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                }))
+              }
+              placeholder="Industry"
+              name="domain"
+            >
+              <option value="IT">Compute Science</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Electrical">Electrical</option>
+            </Select>
             <Input
               onChange={(e) =>
                 setRegisterData((prev) => ({

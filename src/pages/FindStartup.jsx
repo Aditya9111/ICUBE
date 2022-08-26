@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Heading, Container, Select, Flex, Button } from "@chakra-ui/react";
 import axios from "axios";
 import MentorCard from "../components/MentorCard";
-const FindMentor = () => {
+const FindStartup = () => {
   const [data, setData] = useState([]);
 
   const [industry, setIndustry] = React.useState("");
@@ -16,7 +16,7 @@ const FindMentor = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("/api/mentor/" + industry + "/" + city);
+      const response = await axios.get("/auth/" + industry);
       setData(response.data);
     } catch (error) {
       console.error(error.message);
@@ -25,9 +25,9 @@ const FindMentor = () => {
 
   return (
     <>
-      <Container maxW={"7xl"} p="5">
+      <Container maxW={"7xl"} p="12">
         <Heading as="h1" color="teal">
-          Find Mentor
+          Find Startups
         </Heading>
 
         <Flex alignItems="center">
@@ -79,4 +79,4 @@ const FindMentor = () => {
   );
 };
 
-export default FindMentor;
+export default FindStartup;

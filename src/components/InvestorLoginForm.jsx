@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { loginUser } from "../redux/authSlice";
+import { loginInvestor } from "../redux/invauthSlice";
 import {
   Box,
   Flex,
@@ -24,19 +24,19 @@ function InvestorSignIn({ setRegistered }) {
   const handleClick = () => setShow(!show);
   const dispatch = useDispatch();
   const history = useHistory();
-  const { status, isLoggedIn } = useSelector((state) => state.auth);
+  const { status, isLoggedIn } = useSelector((state) => state.invauth);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser(loginData));
+    dispatch(loginInvestor(loginData));
   };
   const loginAsGuest = () => {
     setLoginData({ email: "icube@gmail.com", password: "icube" });
-    dispatch(loginUser({ email: "icube@gmail.com", password: "icube" }));
+    dispatch(loginInvestor({ email: "icube@gmail.com", password: "icube" }));
   };
   useEffect(() => {
     if (isLoggedIn) {
-      history.push("/");
+      history.push("/investorDash");
     }
   }, [isLoggedIn, history]);
 
