@@ -31,8 +31,10 @@ function InvestorSignIn({ setRegistered }) {
     dispatch(loginInvestor(loginData));
   };
   const loginAsGuest = () => {
-    setLoginData({ email: "icube@gmail.com", password: "icube" });
-    dispatch(loginInvestor({ email: "icube@gmail.com", password: "icube" }));
+    setLoginData({ email: "investor3@gmail.com", password: "investor" });
+    dispatch(
+      loginInvestor({ email: "investor3@gmail.com", password: "investor" })
+    );
   };
   useEffect(() => {
     if (isLoggedIn) {
