@@ -1,6 +1,6 @@
 # ICUBE
 
-![Logo](https://raw.githubusercontent.com/Aditya9111/ICUBE-Client/main/src/assets/logo.png)
+![Logo](https://raw.githubusercontent.com/Aditya9111/ICUBE/main/src/assets/logo.png)
 
 Icube is a app built to help startups using React, Redux and Chakra UI.
 
@@ -12,15 +12,17 @@ Icube is a app built to help startups using React, Redux and Chakra UI.
 
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE-Client/main/src/assets/login.png)
+![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE/main/src/assets/landing.png)
 
-![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE-Client/main/src/assets/register.png)
+![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE/main/src/assets/register.png)
 
-![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE-Client/main/src/assets/fm-2.png)
+![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE/main/src/assets/login.png)
 
-![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE-Client/main/src/assets/jobs.png)
+![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE/main/src/assets/auction.png)
 
-![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE-Client/main/src/assets/blog.png)
+![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE/main/src/assets/jobs.png)
+
+![App Screenshot](https://raw.githubusercontent.com/Aditya9111/ICUBE/main/src/assets/blog.png)
 
 
 ## Demo
