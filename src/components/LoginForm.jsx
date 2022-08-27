@@ -68,8 +68,9 @@ function SignIn({ setRegistered }) {
             mt={{ md: "150px", lg: "80px" }}
           >
             <Heading color={titleColor} fontSize="32px" mb="10px">
-              Welcome Back
+              Login for Startups
             </Heading>
+
             <Text
               mb="36px"
               ms="4px"
@@ -183,7 +184,7 @@ function SignIn({ setRegistered }) {
                   fontWeight="bold"
                   onClick={() => setRegistered(false)}
                 >
-                  Register here.
+                  Register as a startup.
                 </Link>
               </Center>
             </Flex>

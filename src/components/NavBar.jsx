@@ -106,7 +106,7 @@ export default function Navbar() {
             color="teal"
             fontSize={"sm"}
             fontWeight={500}
-            href={"http://localhost:3000/login"}
+            href={"/login"}
             p="5px"
             _hover={{
               bg: "teal.300",

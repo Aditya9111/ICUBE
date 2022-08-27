@@ -74,7 +74,7 @@ function InvestorRegisterForm({ setRegistered }) {
             textAlign="center"
             mb="22px"
           >
-            Register
+            Register as Investor
           </Text>
 
           <form onSubmit={handleSubmit}>

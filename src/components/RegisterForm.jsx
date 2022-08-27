@@ -76,7 +76,7 @@ function RegisterForm({ setRegistered }) {
             textAlign="center"
             mb="22px"
           >
-            Register
+            Register as a Startup
           </Text>
 
           <form onSubmit={handleSubmit}>
