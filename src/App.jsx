@@ -21,6 +21,7 @@ import Home from "./components/Home";
 import InvestorLogin from "./pages/InvestorLogin";
 import InvestorRoute from "./components/InvestorRoute";
 import FindStartup from "./pages/FindStartup";
+import Admin from "./pages/Admin";
 
 function App() {
   const dispatch = useDispatch();
@@ -92,6 +93,12 @@ function App() {
             <FindStartup />
           </Layout>
         </InvestorRoute>
+
+        <Route exact path="/admin">
+          <Layout>
+            <Admin />
+          </Layout>
+        </Route>
 
         <Route exact path="/home">
           <Home />

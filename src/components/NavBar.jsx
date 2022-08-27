@@ -30,6 +30,7 @@ import {
 } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/authSlice";
+import { useState } from "react";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -40,9 +41,25 @@ export default function Navbar() {
   const name = data && data.name;
   const startupName = data && data.startupName;
   const email = data && data.email;
+  const [scroll, setScroll] = useState(false);
 
+  const changeScroll = () =>
+    document.body.scrollTop > 80 || document.documentElement.scrollTop > 80
+      ? setScroll(true)
+      : setScroll(false);
+
+  window.addEventListener("scroll", changeScroll);
   return (
-    <Box>
+    <Box
+      flex="0 1 auto"
+      bg={"white"}
+      alignItems="center"
+      boxShadow={scroll ? "base" : "none"}
+      position="sticky"
+      top="0"
+      zIndex="sticky"
+      w="full"
+    >
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}

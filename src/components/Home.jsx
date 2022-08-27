@@ -1,9 +1,9 @@
 import AboutUs from "./Landing page/AboutUs";
-import WhyUs from "./Landing page/WhyUs";
+// import WhyUs from "./Landing page/WhyUs";
 import Footer from "./Landing page/Footer";
 import Hero from "./Landing page/Hero";
 import Services from "./Landing page/Services";
-import Testimonials from "./Landing page/Testimonials";
+// import Testimonials from "./Landing page/Testimonials";
 import { Box } from "@chakra-ui/react";
 import React from "react";
 
@@ -16,8 +16,8 @@ function Home() {
       <Hero />
       <AboutUs />
       <Services />
-      <Testimonials />
-      <WhyUs />
+      {/* <Testimonials />
+      <WhyUs /> */}
       <Footer />
     </Box>
   );

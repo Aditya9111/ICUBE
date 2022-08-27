@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/layout";
 import React from "react";
 import Header from "./Header";
 import InvestorHeader from "./InvestorHeader";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 export default function Layout({ children }) {
   // const { isInvestor } = useSelector((state) => state.invauth);

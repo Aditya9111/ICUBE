@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Heading, Container, Select, Flex, Button } from "@chakra-ui/react";
 import axios from "axios";
-import MentorCard from "../components/MentorCard";
+import StartupCard from "../components/StartupCard";
 const FindStartup = () => {
   const [data, setData] = useState([]);
 
@@ -64,14 +64,17 @@ const FindStartup = () => {
         </Flex>
 
         {data.map((post) => (
-          <MentorCard
-            key={post._id}
-            city={post.city}
-            organisation={post.organisation}
-            username={post.username}
-            photo={post.photo}
-            linkedin={post.linkedin}
-            industry={post.industry}
+          <StartupCard
+            photo={
+              "https://i0.wp.com/www.inventiva.co.in/wp-content/uploads/2022/06/BgWmTW6J-startup-company-1.jpg"
+            }
+            name={post.name}
+            startupName={post.startupName}
+            email={post.email}
+            domain={post.domain}
+            website={
+              '"https://i0.wp.com/www.inventiva.co.in/wp-content/uploads/2022/06/BgWmTW6J-startup-company-1.jpg"'
+            }
           />
         ))}
       </Container>

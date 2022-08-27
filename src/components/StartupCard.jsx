@@ -16,8 +16,8 @@ export const JobAuthor = (props) => {
   return (
     <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
       <Text fontWeight="medium">{props.name}</Text>
-      {/* <Text>—</Text>
-      <Text>{props.city}</Text> */}
+      <Text>—</Text>
+      <Text>{props.email}</Text>
     </HStack>
   );
 };
@@ -36,7 +36,7 @@ const JobTag = (props) => {
   );
 };
 
-const StartupCard = ({ startupName, name, photo, domain, email, photo }) => {
+const StartupCard = ({ startupName, name, photo, domain, email, website }) => {
   return (
     <Box
       boxShadow="xl"
@@ -103,11 +103,8 @@ const StartupCard = ({ startupName, name, photo, domain, email, photo }) => {
           </Heading>
 
           <Flex justifyContent="space-between" alignItems="center">
-            <JobAuthor
-              name={name}
-              //   city={city}
-            />
-            <Link href={linkedin} isExternal textDecoration="none" ml="20px">
+            <JobAuthor name={name} email={email} />
+            <Link href={website} isExternal textDecoration="none" ml="20px">
               <Button colorScheme="teal" size="md">
                 <AiFillLinkedin size={30} />
               </Button>
